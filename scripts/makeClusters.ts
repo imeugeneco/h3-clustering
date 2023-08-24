@@ -1,7 +1,13 @@
+/**
+ * 기존 데이터로 주어진 폴리곤 내에서 클러스터링 테스트하는 용도예요.
+ * clusterArticlePoints의 매개변수 등이 수정되어 오류가 날텐데,
+ * 더이상 필요하지 않은 스크립트라서 따로 대응은 안해두었어요.
+ */
+
 import fs from 'fs';
 import path from 'path';
-
-import { clusterArticlePoints, Coordinates } from '../src';
+import { Coordinates } from 'src/models/types';
+import { clusterArticlePoints } from 'src/services/clusterArticlePoints';
 
 const defaultConfig = JSON.parse(
   fs.readFileSync(path.join(__dirname, "..", "config.json"), "utf-8")

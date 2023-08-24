@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "cluster:head": "ts-node scripts/makeClusters.ts input=./sample-data/articles-head.csv output=./dist/clusters.json",
-    "cluster:all": "ts-node scripts/makeClusters.ts input=./sample-data/articles-all.csv output=./dist/clusters.json"
+    "cluster:head": "ts-node scripts/makeClusters.ts input=./sample-data/articles-head.csv output=./outputs/clusters-head.json",
+    "cluster:all": "ts-node scripts/makeClusters.ts input=./sample-data/articles-all.csv output=./outputs/clusters-all.json",
+    "process:all": "ts-node scripts/preProcessData.ts input=./sample-data/articles-all.csv output=./outputs/articles-processed.json",
+    "start": "ts-node --files src/api/index.ts"
   },
   "repository": {
     "type": "git",
@@ -18,9 +20,14 @@
   },
   "homepage": "https://github.com/imeugeneco/h3-clustering#readme",
   "dependencies": {
+    "csv-parser": "^3.0.0",
+    "csv-writer": "^1.6.0",
+    "express": "^4.18.2",
     "h3-js": "^4.1.0"
   },
   "devDependencies": {
+    "@types/body-parser": "^1.19.2",
+    "@types/express": "^4.17.17",
     "@types/node": "^20.4.9",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.6"

@@ -7,7 +7,7 @@
     "forceConsistentCasingInFileNames": true,
     "target": "ES6",
     "moduleResolution": "Node",
-    "module": "ESNext",
+    "module": "CommonJS",
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
@@ -16,13 +16,16 @@
     "incremental": true,
     "composite": true,
     "rootDir": ".",
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./src/*"]
+    }
   },
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
     }
   },
-  "include": ["src", "scripts"],
+  "include": ["src", "scripts", "sample-data/indexx.ts"],
   "exclude": ["node_modules", "dist"]
 }
